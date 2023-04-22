@@ -1,0 +1,62 @@
+{
+
+    "Header.Item1": "Acerca de mi",
+    "Header.Item2": "Experiencia",
+    "Header.Item3": "Proyectos",
+    "Header.Item4": "Contacto",
+    "Header.cvBtn": "Curriculum",
+    "Header.cvName": "CV_Jose_Hernandez_Espanol.pdf",
+
+    "Banner.Pretitle": "Hola! Mi nombre es",
+    "Banner.Description": "Soy estudiante de <span class='underline'>front y backend</span> en Argentina programa y estudiante de <span class='underline'>Analista en Sistemas</span> de la universidad de <span class='underline'>UADER, FCYT</span>.",
+    "Banner.ActionBtn": "Enviar Correo",
+
+    "AboutMe.Title": "Acerca de mi",
+    "AboutMe.Paragraphs": [
+        "Soy un individuo amigable siempre abierto a aprender nuevas habilidades."
+    ],
+
+
+    "Experience.Title": "Experiencia",
+    "Experience.Jobs": [
+      {
+            "Tab": "Proyecto N",
+            "Title": "Edicion de Video, Gestion de Comunidad, Creacion de Pagina Web",
+            "Date": "2016 - 2018",
+            "Description": [
+              "Creacion de Videos y Manejo de comunidad relacionado con Animé.",
+              "Gestion de redes sociales y creación de página web gratis vía wordpress donde alojar multimedia."
+            ]
+      },
+      {
+        "Tab": "Web MC",
+        "Title": "Creacion de pagina web personal, con objetivo a pequeña comunidad de amigos.",
+        "Date": "2020 - 2021 ",
+        "Description": [
+          "Creacion y Gestion de página web gratuita con la ayuda de wordpress."
+        ]
+      }
+    ],
+
+    "FeatureProjects.Title": "Mis proyectos",
+    "FeatureProjects.Label": "Proyecto Destacado",
+    "FeatureProjects.Projects": [{
+            "Title": "Sin proyectos futuros escritos",
+            "Description": "Descripcion",
+            "imgs": [
+            ],
+            "Technologies": [""]
+        }
+    ],
+
+
+
+
+
+    "Contact.Pretitle": "Y... ¿Ahora?",
+    "Contact.Title": "¡Saludame!",
+    "Contact.Content": "Estaré encantado de recibir tu contacto si quieres conversar acerca de nuevas oportunidades. Escríbeme, y te responderé tan pronto como vea tu mensaje.",
+    "Contact.Btn": "Contactame"
+
+
+}
