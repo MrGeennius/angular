@@ -5,7 +5,7 @@
     "Header.Item3": "Proyectos",
     "Header.Item4": "Contacto",
     "Header.cvBtn": "Curriculum",
-    "Header.cvName": "",
+    "Header.lBtn": "Login",
 
     "Banner.Pretitle": "Hola! Mi nombre es",
     "Banner.Description": "Soy estudiante de <span class='underline'>front y backend</span> en Argentina programa y estudiante de <span class='underline'>Analista en Sistemas</span> de la universidad de <span class='underline'>UADER, FCYT</span>.",
