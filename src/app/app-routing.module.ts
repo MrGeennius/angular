@@ -14,7 +14,6 @@ const routes: Routes = [
   // {path: 'register-user'  ,   component: RegisterUserComponent    , canActivate: [AuthGuard]},
 
   {path: '**', pathMatch: 'full', redirectTo: 'portfolio'},
-
 ];
 
 @NgModule({

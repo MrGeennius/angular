@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {Router} from "@angular/router"
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(private formBuilder:FormBuilder, private router:Router) {}
+  constructor(private formBuilder:FormBuilder, private router:Router, private authService:AuthService) {}
     
   ngOnInit(): void {
     this.form = this.createForm();
@@ -45,5 +46,21 @@ export class LoginComponent implements OnInit {
   {
     return this.form.get('password');
   }
+
+  onEnviar(event: Event) {
+    event.preventDefault();
+    const credentials = {
+      mailUser: this.form.value.email,
+      passwordUser: this.form.value.password
+    };
+    console.log("Credenciales enviadas:", credentials);
+    this.authService.IniciarSesion(credentials).subscribe((isLoggedIn) => {
+      console.log("DATA:", isLoggedIn);
+      if (isLoggedIn) {
+        this.router.navigate(["/portfolio"]);
+      } else {
+        // Manejar el caso en que las credenciales no son válidas (mostrar mensaje de error, etc.)
+      }
+    });
+  }
 }
- 

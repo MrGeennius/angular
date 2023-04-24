@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="submitForm()" class="form-div">
+<form [formGroup]="form" class="form-div" (ngSubmit)="onEnviar($event)">
     <h3>Iniciar Sesion</h3>
     <div class="mb-3">
       <label for="exampleInputEmail1">Email</label>
@@ -26,9 +26,6 @@
         CONTRASEÑA OBLIGATORIA
         </p>
       </div>
-
-
-
     </div>
     <button type="submit" class="btn btn-primary" >Enviar</button>
   </form> 
