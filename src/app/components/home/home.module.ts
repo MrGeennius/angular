@@ -14,6 +14,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { EditableTextComponent } from './editable-text/editable-text.component';
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -30,7 +31,9 @@ export function HttpLoaderFactory(http: HttpClient){
     MoreProyectsComponent,
     ContactComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    EditableTextComponent,
+    
   ],
   imports: [
     CommonModule,
