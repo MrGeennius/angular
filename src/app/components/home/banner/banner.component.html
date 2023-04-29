@@ -7,8 +7,13 @@
                     <h1>{{"Banner.Pretitle" | translate}}</h1>
                 </div>
                 <div class='banner-title'>
-                    <h2>Juan Ignacio Duarte.</h2>
-                    <h3>Estudiante de Desarrollo FullStack</h3>
+                    <div *ngFor="let persona of personas">
+                    <h2>{{persona.nombre}} {{persona.apellido}}</h2> 
+                    <h3>{{persona.descripcion}}</h3>
+                <div class="div-btn-banner">
+                    <button class="main-btn" (click)="editItem(persona.id)">Editar Persona</button>
+                </div> 
+                    </div>
                 </div>
                 <div class='banner-description'>
                     <p [innerHTML]='"Banner.Description" | translate' class="mt-4"></p>

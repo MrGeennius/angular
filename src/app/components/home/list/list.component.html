@@ -1,0 +1,10 @@
+<table>
+    <tbody>
+      <tr *ngFor="let persona of personas">
+        <td>{{persona.nombre}}</td>
+        <td>
+          <button (click)="editItem(persona.id)">Editar</button>
+        </td>
+      </tr>
+    </tbody>
+</table>

@@ -15,6 +15,10 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { EditableTextComponent } from './editable-text/editable-text.component';
+import { ListComponent } from './list/list.component';
+import { CreateComponent } from './create/create.component';
+import { EditComponent } from './edit/edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -30,12 +34,16 @@ export function HttpLoaderFactory(http: HttpClient){
     ProyectsComponent,
     MoreProyectsComponent,
     ContactComponent,
+    ListComponent,
+    CreateComponent,
+    EditComponent,
     HeaderComponent,
     FooterComponent,
     EditableTextComponent,
     
   ],
   imports: [
+    ReactiveFormsModule,
     CommonModule,
     NgbNavModule,
     CarouselModule,

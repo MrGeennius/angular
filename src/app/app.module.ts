@@ -11,9 +11,9 @@ import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { LoginComponent } from './components/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -21,8 +21,8 @@ export function HttpLoaderFactory(http: HttpClient){
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     PortfolioComponent,
+    LoginComponent
     /* ArchiveComponent */
   ],
   schemas: [

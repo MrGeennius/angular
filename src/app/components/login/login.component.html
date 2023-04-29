@@ -1,5 +1,6 @@
 <app-header></app-header>
 <form [formGroup]="form" class="form-div" (ngSubmit)="onEnviar($event)">
+  <app-list></app-list>
   <span class='underline'><h3>Iniciar Sesion</h3></span>
     <div class="mb-3">
       <label for="exampleInputEmail1">Email</label>
@@ -30,5 +31,6 @@
     <button type="submit" class="btn btn-primary" >Enviar</button>
   </form>
   <div class="footer">
+    
   <app-footer></app-footer>
   </div>
