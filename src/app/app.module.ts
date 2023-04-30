@@ -22,7 +22,8 @@ export function HttpLoaderFactory(http: HttpClient){
   declarations: [
     AppComponent,
     PortfolioComponent,
-    LoginComponent
+    LoginComponent,
+
     /* ArchiveComponent */
   ],
   schemas: [
