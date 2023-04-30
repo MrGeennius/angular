@@ -7,18 +7,16 @@ import { Observable } from 'rxjs';
 })
 export class CrudService {
   private apiUrl = 'http://localhost:8080';
-
   constructor(private http: HttpClient) { }
   
-  getItems(): Observable<any[]> {
+  getItems(): Observable<any> {
     const url = `${this.apiUrl}/ver/personas`;
-    return this.http.get<any[]>(url);
+    return this.http.get<any>(url);
   }
 
   getItem(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${id}`);
+    return this.http.get<any>(`${this.apiUrl}/ver/personas`);
   }
-
   createItem(item: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, item);
   }
@@ -30,5 +28,16 @@ export class CrudService {
 
   deleteItem(id: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${id}`);
+  }
+
+  saveBannerDesc(description: string): Observable<any> {
+    const bannerDesc = { description };
+    return this.http.put<any>(`${this.apiUrl}/banner/guardar`, bannerDesc);
+  }
+  updateBannerDesc(bannerDesc: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/banner/guardar`, bannerDesc);
+  }
+  getBannerDesc(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/banner/ver`);
   }
 }

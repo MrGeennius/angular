@@ -55,10 +55,16 @@
                 width:130px;
                 display:inline-block;
             }
+            
         }
 
        
     }    
+    
 }
 
 
+.large-input {
+    width: 100%; // Establece el ancho de los campos de entrada al 100% del contenedor
+    max-width: 500px; // Establece un ancho máximo para los campos de entrada (opcional)
+  }

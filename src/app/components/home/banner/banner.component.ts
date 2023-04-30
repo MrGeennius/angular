@@ -1,5 +1,4 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-
 import {trigger, state, style, animate, transition, stagger, query } from "@angular/animations"
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
 import { CrudService } from 'src/app/services/CrudService/crud-service.service';
@@ -30,9 +29,11 @@ export class BannerComponent implements OnInit {
   
 
   constructor(public analyticsService: AnalyticsService,private crudService: CrudService, private router: Router) {}
-  personas: any[];
+  personas: any;
+  bannerDesc: any;
   ngOnInit(): void {
     this.getItems();
+    this.getBannerDesc();
   }
   getItems(): void {
     this.crudService.getItems().subscribe((data) => {
@@ -40,13 +41,18 @@ export class BannerComponent implements OnInit {
     });
   }
 
-  editItem(itemId: number): void {
-    this.router.navigate(['/edit', itemId]);
+  editItem(): void {
+    this.router.navigate(['/edit/1']);
   }
 
-  deleteItem(itemId: number): void {
-    this.crudService.deleteItem(itemId).subscribe(() => {
-      this.getItems(); 
+  
+  getBannerDesc() {
+    this.crudService.getBannerDesc().subscribe(bannerDesc => {
+      this.bannerDesc = bannerDesc;
     });
   }
+  goToEditBanner() {
+    this.router.navigate(['/edit/banner']);
+  }
+
 }

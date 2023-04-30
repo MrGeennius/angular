@@ -1,8 +1,0 @@
-<div *ngIf="editing">
-    <input [(ngModel)]="text" />
-    <button (click)="onSave(text)">Enviar</button>
-  </div>
-  <div *ngIf="!editing">
-    <span>{{text}}</span>
-    <button (click)="editing = true">Editar</button>
-  </div>

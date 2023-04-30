@@ -11,13 +11,14 @@
                     <h2>{{persona.nombre}} {{persona.apellido}}</h2> 
                     <h3>{{persona.descripcion}}</h3>
                 <div class="div-btn-banner">
-                    <button class="main-btn" (click)="editItem(persona.id)">Editar Persona</button>
+                    <button class="edit-btn" (click)="editItem(persona.id)">Editar Persona</button>
                 </div> 
                     </div>
                 </div>
                 <div class='banner-description'>
-                    <p [innerHTML]='"Banner.Description" | translate' class="mt-4"></p>
                 </div>
+                <h1>{{bannerDesc.description}}</h1>
+                <button class="edit-btn" (click)="goToEditBanner()">Editar Descripción</button>
             </div>
             <div class="div-btn-banner">
                 <a (click)='analyticsService.sendAnalyticEvent("click_send_mail", "banner", "email")' href="mailto:mr.geennius@gmail.com" target="_black" class="main-btn">

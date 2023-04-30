@@ -98,7 +98,14 @@
     }
 
 }
-
+h1{
+    
+    color: #64ffda;
+    margin: 0 0 20px 3px;
+    font-size: 15px;
+    font-weight: normal;
+    font-family: $CodeFont;
+}
 
 @media(max-width: 1300px){
     .more-proyects{

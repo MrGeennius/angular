@@ -20,7 +20,7 @@ export class EditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.itemId = +this.route.snapshot.paramMap.get('id');
+    this.itemId = 1;
     this.initForm();
     this.getItem();
   }
@@ -35,12 +35,18 @@ export class EditComponent implements OnInit {
   }
 
   getItem() {
-    this.crudService.getItem(this.itemId).subscribe(item => {
+    this.crudService.getItem(this.itemId).subscribe(itemArray => {
+      const item = itemArray[0]; // Accede al primer elemento del array
+      
+      console.log('Item received:', item);
+      
       this.itemForm.patchValue({
         nombre: item.nombre,
         apellido: item.apellido,
-        descripcion:''
+        descripcion: item.descripcion
       });
+  
+      console.log('Updated form values:', this.itemForm.value);
     });
   }
 
