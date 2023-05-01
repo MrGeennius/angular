@@ -19,6 +19,8 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditBannerComponent } from './editbanner/editbanner.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -44,6 +46,8 @@ export function HttpLoaderFactory(http: HttpClient){
   imports: [
     ReactiveFormsModule,
     CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
     NgbNavModule,
     CarouselModule,
     TranslateModule.forChild({

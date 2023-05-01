@@ -6,21 +6,21 @@
 
 
                 
-                <h3>Editar</h3><h2>Persona</h2>
+                <h3>Editar</h3><h2> Persona</h2>
 
 <form [formGroup]="itemForm" (ngSubmit)="saveItem()">
   <div>
     <h1><label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" placeholder="Nombre" formControlName="nombre" />
+    <input type="text" id="nombre" maxlength="20" placeholder="Nombre" formControlName="nombre" />
   </h1>
   </div>
   <div>
     <h1><label for="apellido">Apellido:</label>
-    <input type="text" id="apellido"  placeholder="Apellido" formControlName="apellido" /></h1>
+    <input type="text" id="apellido" maxlength="20" placeholder="Apellido" formControlName="apellido" /></h1>
   </div>
   <div>
     <h1><label for="descripcion">Descripción:</label>
-    <input class="large-input" type="text" id="descripcion" placeholder="Descripción" formControlName="descripcion" /></h1>
+    <input class="large-input" maxlength="80" type="text" id="descripcion" placeholder="Descripción" formControlName="descripcion" /></h1>
   </div>
   <button class ="main-btn" type="submit">Guardar cambios</button>
 </form>

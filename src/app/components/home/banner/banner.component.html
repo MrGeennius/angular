@@ -10,15 +10,20 @@
                     <div *ngFor="let persona of personas">
                     <h2>{{persona.nombre}} {{persona.apellido}}</h2> 
                     <h3>{{persona.descripcion}}</h3>
-                <div class="div-btn-banner">
-                    <button class="edit-btn" (click)="editItem(persona.id)">Editar Persona</button>
-                </div> 
+                    <p>
+                    <button class="boton_editar2" (click)="editItem(persona.id)">
+                        <img class="boton_editar2" src="/assets/images/boton_editar_3.png"/>
+                    
+                    </button>
+                </p>
                     </div>
                 </div>
                 <div class='banner-description'>
                 </div>
-                <h1>{{bannerDesc.description}}</h1>
-                <button class="edit-btn" (click)="goToEditBanner()">Editar Descripción</button>
+                <p>{{bannerDesc.description}}</p>
+                <p><button class="boton_editar" (click)="goToEditBanner()">
+                    <img class="boton_editar" src="/assets/images/boton_editar_3.png"/>
+                </button></p>
             </div>
             <div class="div-btn-banner">
                 <a (click)='analyticsService.sendAnalyticEvent("click_send_mail", "banner", "email")' href="mailto:mr.geennius@gmail.com" target="_black" class="main-btn">

@@ -35,9 +35,11 @@
 
             h2{
                 color: $LightestSlate;
+                
             }
             h3{  
                 color: $Slate;
+                display: inline;
             }
 
             .banner-description{
@@ -45,7 +47,10 @@
             }
 
             p{
-                max-width: 500px;
+                margin: 0px;
+                display: inline;
+                color: #64ffda;
+                font-family: $CodeFont;
             }
 
             .div-btn-banner{
@@ -56,6 +61,23 @@
 
        
     }    
+}
+.boton_editar{
+    width: 35px;
+    height: 35px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.boton_editar2{
+    width: 35px;
+    height: 35px;
+    display: inline;
+    vertical-align:top;
+    border: none;
+    outline: none;
+    background-color: transparent;
 }
 
 

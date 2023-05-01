@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './components/home/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
@@ -32,7 +31,6 @@ export function HttpLoaderFactory(http: HttpClient){
   imports: [
     BrowserAnimationsModule,
     HomeModule,
-    AnimateOnScrollModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
