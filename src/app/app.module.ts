@@ -13,6 +13,7 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
+import { Home2Module } from './components/home2/home2.module';
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -31,6 +32,7 @@ export function HttpLoaderFactory(http: HttpClient){
   imports: [
     BrowserAnimationsModule,
     HomeModule,
+    Home2Module,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

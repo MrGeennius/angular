@@ -1,0 +1,26 @@
+<section class="section banner">
+    <div [@bannerTrigger] class="container">
+        <div class="section-box-banner">
+            <div class="content">
+                <div>
+                    <!-- <h1>Hola, mi nombre es</h1> -->
+                    <h1>{{"Banner.Pretitle" | translate}}</h1>
+                </div>
+                <div class='banner-title'>
+                    <div *ngFor="let persona of personas">
+                    <h2>{{persona.nombre}} {{persona.apellido}}</h2> 
+                    <h3>{{persona.descripcion}}</h3>
+                    </div>
+                </div>
+                <div class='banner-description'>
+                </div>
+                <p>{{bannerDesc.description}}</p>
+            </div>
+            <div class="div-btn-banner">
+                <a href="mailto:mr.geennius@gmail.com" target="_black" class="main-btn">
+                    {{"Banner.ActionBtn" | translate}}
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

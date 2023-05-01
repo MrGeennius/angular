@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
     this.authService.IniciarSesion(credentials).subscribe((isLoggedIn) => {
       console.log("DATA:", isLoggedIn);
       if (isLoggedIn) {
-        this.router.navigate(["/portfolio"]);
+        this.router.navigate(["/portfolioLog"]);
       } else {
         // Manejar el caso en que las credenciales no son válidas (mostrar mensaje de error, etc.)
       }
