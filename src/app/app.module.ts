@@ -10,7 +10,6 @@ import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { Home2Module } from './components/home2/home2.module';
@@ -21,7 +20,6 @@ export function HttpLoaderFactory(http: HttpClient){
 @NgModule({
   declarations: [
     AppComponent,
-    PortfolioComponent,
     LoginComponent,
 
     /* ArchiveComponent */

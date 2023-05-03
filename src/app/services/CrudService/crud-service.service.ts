@@ -40,4 +40,28 @@ export class CrudService {
   getBannerDesc(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/banner/ver`);
   }
+
+  saveAboutDesc(description: string): Observable<any> {
+    const aboutDesc = { description };
+    return this.http.put<any>(`${this.apiUrl}/about/guardar`, aboutDesc);
+  }
+  updateAboutDesc(aboutDesc: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/about/guardar`, aboutDesc);
+  }
+  getAboutDesc(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/about/ver`);
+  }
+
+
+saveSaludoDesc(description: string): Observable<any> {
+  const saludoDesc = { description };
+  return this.http.put<any>(`${this.apiUrl}/saludo/guardar`, saludoDesc);
+}
+updateSaludoDesc(saludoDesc: any): Observable<any> {
+  return this.http.put<any>(`${this.apiUrl}/saludo/guardar`, saludoDesc);
+}
+getSaludoDesc(): Observable<any> {
+  return this.http.get<any>(`${this.apiUrl}/saludo/ver`);
+}
+
 }

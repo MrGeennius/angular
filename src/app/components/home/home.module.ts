@@ -21,6 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EditBannerComponent } from './editbanner/editbanner.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { EditAboutComponent } from './editabout/editabout.component';
+import { EditSaludoComponent } from './editsaludo/editsaludo.component';
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -42,6 +44,8 @@ export function HttpLoaderFactory(http: HttpClient){
     HeaderComponent,
     FooterComponent,
     EditBannerComponent,
+    EditAboutComponent,
+    EditSaludoComponent,
   ],
   imports: [
     ReactiveFormsModule,

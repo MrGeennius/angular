@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
+import { CrudService } from 'src/app/services/CrudService/crud-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -7,12 +9,35 @@ import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-
-  constructor(
-    public analyticsService: AnalyticsService
-  ) { }
+  personas: any;
+  saludoDesc: any;
+  constructor(public analyticsService: AnalyticsService,private crudService: CrudService, private router: Router) {}
 
   ngOnInit(): void {
+    this.getItems();
+    this.getSaludoDesc();
+  }
+  getItems(): void {
+    this.crudService.getItems().subscribe((data) => {
+      this.personas = data;
+    });
   }
 
+  editItem(itemId: number): void {
+    this.router.navigate(['/edit', itemId]);
+  }
+
+  deleteItem(itemId: number): void {
+    this.crudService.deleteItem(itemId).subscribe(() => {
+      this.getItems(); 
+    });
+  }
+  getSaludoDesc() {
+    this.crudService.getSaludoDesc().subscribe(saludoDesc => {
+      this.saludoDesc = saludoDesc;
+    });
+  }
+  goToEditSaludo() {
+    this.router.navigate(['/edit/saludo']);
+  }
 }

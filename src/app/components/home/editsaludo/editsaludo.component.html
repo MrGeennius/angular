@@ -1,0 +1,25 @@
+<app-header></app-header>
+<section class="section saludo">
+  <div class="container"> 
+    <div class="section-box-saludo">
+      <div>
+       <p class="text-h3">Editar</p><p class="text-h2"> descripcion del Saludo </p>
+    
+        <form *ngIf="saludoForm" [formGroup]="saludoForm" (ngSubmit)="onSubmit()">
+            <mat-form-field  class="custom-mat-input">
+              <mat-label class="cine">Descripción</mat-label>
+              <textarea class="custom-textarea" maxlength="200" matInput matTextareaAutosize matAutosizeMinRows="6" matAutosizeMaxRows="10"  placeholder="description" formControlName="description"></textarea>
+              <div class="mat-hint-div">
+              <mat-hint class="mat-hint" align="end">
+                {{200 - saludoForm.controls.description.value.length}} caracteres restantes
+              </mat-hint></div>
+            </mat-form-field>
+            <div class="mb-0">
+            <button class="main-btn" type="submit">Guardar cambios</button>
+        </div>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </section>

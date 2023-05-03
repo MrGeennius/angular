@@ -34,7 +34,7 @@ export class EditBannerComponent implements OnInit {
     const newDescription = this.bannerForm.value.description;
     const updatedBannerDesc = { description: newDescription };
     this.crudService.updateBannerDesc(updatedBannerDesc).subscribe(response => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/portfolioLog']);
     });
   }
 

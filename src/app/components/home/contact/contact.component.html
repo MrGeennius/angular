@@ -7,9 +7,10 @@
                     {{"Contact.Title" | translate}}
                 </h4>
             </div>
-            <p data-aos="fade-up" data-aos-duration="1000">
-                {{"Contact.Content" | translate}}
-            </p>
+            <p>{{saludoDesc.description}}</p>
+                <p><button class="boton_editar" (click)="goToEditSaludo()">
+                    <img class="boton_editar" src="/assets/images/boton_editar_3.png"/>
+                </button></p>
             <div class="mt-5">
                 <a (click)='analyticsService.sendAnalyticEvent("click_send_mail", "contact", "email")' href="mailto:mr.geennius@gmail.com" target="_blank" class="main-btn" data-aos="fade-up" data-aos-duration="1000">
                     {{"Contact.Btn" | translate}}

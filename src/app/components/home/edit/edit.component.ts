@@ -60,7 +60,7 @@ export class EditComponent implements OnInit {
     this.crudService.updateItem(updatedItem).subscribe(
       (response) => {
         console.log('Update response:', response);
-        this.router.navigate(['/portfolio']);
+        this.router.navigate(['/portfolioLog']);
       },
       (error) => {
         console.log('Error:', error);

@@ -5,14 +5,19 @@ import { LoginComponent } from './components/login/login.component';
 import { EditComponent } from './components/home/edit/edit.component';
 import { EditBannerComponent } from './components/home/editbanner/editbanner.component';
 import { Home2Component } from './components/home2/home2.component';
+import { AboutComponent } from './components/home/about/about.component';
+import { EditAboutComponent } from './components/home/editabout/editabout.component';
+import { EditSaludoComponent } from './components/home/editsaludo/editsaludo.component';
 const routes: Routes = [
 
+  {path: 'portfolio', component: Home2Component},
   {path: 'portfolioLog',      component: HomeComponent},
   {path: 'login',   component: LoginComponent},
   {path: 'edit/1', component: EditComponent },
+  {path: 'edit/saludo', component: EditSaludoComponent},
   {path: 'edit/banner', component: EditBannerComponent},
-  {path: '**', pathMatch: 'full', redirectTo: 'portfolio'},
-  {path: 'portfolio', component: Home2Component}
+  {path: 'edit/about', component: EditAboutComponent},
+  {path: '**', pathMatch: 'full', redirectTo: 'portfolio'}
 
 ];
 

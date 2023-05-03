@@ -9,12 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-  personas: any[];
-
+  personas: any;
+  aboutDesc: any;
   constructor(public analyticsService: AnalyticsService,private crudService: CrudService, private router: Router) {}
 
   ngOnInit(): void {
     this.getItems();
+    this.getAboutDesc();
   }
   getItems(): void {
     this.crudService.getItems().subscribe((data) => {
@@ -30,5 +31,13 @@ export class AboutComponent implements OnInit {
     this.crudService.deleteItem(itemId).subscribe(() => {
       this.getItems(); 
     });
+  }
+  getAboutDesc() {
+    this.crudService.getAboutDesc().subscribe(aboutDesc => {
+      this.aboutDesc = aboutDesc;
+    });
+  }
+  goToEditAbout() {
+    this.router.navigate(['/edit/about']);
   }
 }
