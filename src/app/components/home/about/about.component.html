@@ -8,10 +8,10 @@
              </div>
             <div class="row">
                 <div class="col-12 col-md-6 mb-4 mb-md-0">
-                    <p>{{aboutDesc.description}}</p>
-                    <p><button class="boton_editar" (click)="goToEditAbout()">
-                        <img class="boton_editar" src="/assets/images/boton_editar_3.png"/>
-                    </button></p>
+                    <p>{{aboutDesc?.description}}</p>
+                    <button class="boton_editar" (click)="goToEditAbout()">
+                    <img class="boton_editar" src="/assets/images/boton_editar_3.png"/>
+                    </button>
                         <ul class="skills-list" data-aos="fade-up">
                             <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Photoshop </span></li>
                             <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">C++ </span></li>

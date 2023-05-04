@@ -7,10 +7,10 @@
         <form *ngIf="aboutForm" [formGroup]="aboutForm" (ngSubmit)="onSubmit()">
             <mat-form-field  class="custom-mat-input">
               <mat-label class="cine">Descripción</mat-label>
-              <textarea class="custom-textarea" maxlength="200" matInput matTextareaAutosize matAutosizeMinRows="6" matAutosizeMaxRows="10"  placeholder="description" formControlName="description"></textarea>
+              <textarea class="custom-textarea" maxlength="120" matInput matTextareaAutosize matAutosizeMinRows="6" matAutosizeMaxRows="10"  placeholder="description" formControlName="description"></textarea>
               <div class="mat-hint-div">
               <mat-hint class="mat-hint" align="end">
-                {{200 - aboutForm.controls.description.value.length}} caracteres restantes
+                {{120 - aboutForm.controls.description.value.length}} caracteres restantes
               </mat-hint></div>
             </mat-form-field>
             <div class="mb-0">

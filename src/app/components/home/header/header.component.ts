@@ -59,7 +59,7 @@ export class HeaderComponent implements OnInit {
     this.responsiveMenuVisible=false;
   }
   goToLogin(){
-    this.router.navigate(["/login"]);
+    this.router.navigate(["/portfolio"]);
   }
    downloadCV(){
      this.languageService.translateService.get("Header.cvName").subscribe(val => {

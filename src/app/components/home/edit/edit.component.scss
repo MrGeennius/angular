@@ -19,7 +19,10 @@
             h1{
     
                 color: #64ffda;
+                text-align: left;
+                display: inline;
                 margin: 0 0 20px 3px;
+                vertical-align: center;
                 font-size: 16px;
                 font-weight: normal;
                 font-family: $CodeFont;
@@ -66,9 +69,33 @@
     }    
     
 }
-
-
+.custom-textarea {
+    width: 100%; 
+    max-width: 700px;
+    min-width: 700px;
+    min-height: 5px;
+    max-height: 40px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border: 1px solid $Green;
+    display: flex;
+  flex-wrap: wrap; 
+  font-size: 18px;
+  background-color: transparent;
+  padding: 10px;
+  color: #FFFFFF;
+  -webkit-transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    transition: all 0.5s cubic-bezier(0.645,0.045,0.355,1);
+  &:hover, &:focus, &:active {
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    outline: none;}
+  }
 .large-input {
     width: 100%; // Establece el ancho de los campos de entrada al 100% del contenedor
     max-width: 500px; // Establece un ancho máximo para los campos de entrada (opcional)
   }
+
+.main-btn{
+    margin-top: 20px;
+}
