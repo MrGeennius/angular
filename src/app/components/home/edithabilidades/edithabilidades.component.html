@@ -2,23 +2,39 @@
 
 <div class="sep">
     <p class="habilidad">Habilidades</p>
-    <form (ngSubmit)="addSkill(newSkill)">
+    <form [formGroup]="newSkillForm" (ngSubmit)="addSkill(newSkillForm.value)">
         <div class="form-group">
-          <p class="text-h1"><label for="newSkill">Agregar habilidad</label></p>
-          <input maxlength="20" type="text" class="form-control" id="newSkill" [(ngModel)]="newSkill.habilidad" name="newSkill">
+          <p class="text-h1">
+            <label for="new-skill">Agregar habilidad</label></p>
+          <input formControlName="habilidad" maxlength="14" type="text" class="form-control" id="new-skill" name="new-skill">
+          <div *ngIf="newSkillForm.controls['habilidad'].invalid && (newSkillForm.controls['habilidad'].dirty || newSkillForm.controls['habilidad'].touched)" class="text-danger">
+            <div *ngIf="newSkillForm.controls['habilidad'].errors.required">No puedes enviar formulario en blanco.</div>
+            <div *ngIf="newSkillForm.controls['habilidad'].errors.minlength">La habilidad debe tener al menos 3 caracteres.</div>
+            <div *ngIf="newSkillForm.controls['habilidad'].errors.maxlength">La habilidad no debe tener más de 14 caracteres.</div>
+          </div>
         </div>
-        <button type="submit" class="main-btn">Agregar</button>
+        <button [ngClass]="{ 'disabled-button': remainingTime > 0 || newSkillForm.invalid }"
+            [disabled]="remainingTime > 0 || newSkillForm.invalid" type="submit" class="main-btn">Agregar</button>    
+        <div *ngIf="remainingTime > 0" class="text-danger">
+            Espera {{ remainingTime }} segundos para agregar otra habilidad
+          </div>
       </form>
       
-      <!-- Listado de habilidades existentes -->
-      <div *ngFor="let habilidad of AboutHabilidades">
-        <form (ngSubmit)="updateSkill(habilidad)">
+      <!-- Listado -->
+      <div *ngFor="let habilidad of AboutHabilidades; let i = index">
+        <form [formGroup]="skillForms[i]" (ngSubmit)="updateSkill(habilidad)">
           <div class="form-group">
-            <input maxlength="20" type="text" class="form-control" id="skill" [(ngModel)]="habilidad.habilidad" name="skill">
+            <input formControlName="habilidad" maxlength="14" type="text" class="form-control" id="skill" name="skill">
+            <div *ngIf="skillForms[i].controls['habilidad'].invalid && (skillForms[i].controls['habilidad'].dirty || skillForms[i].controls['habilidad'].touched)" class="text-danger">
+              <div *ngIf="skillForms[i].controls['habilidad'].errors.required">La habilidad es obligatoria.</div>
+              <div *ngIf="skillForms[i].controls['habilidad'].errors.minlength">La habilidad debe tener al menos 3 caracteres.</div>
+              <div *ngIf="skillForms[i].controls['habilidad'].errors.maxlength">La habilidad no debe tener más de 14 caracteres.</div>
+            </div>
           </div>
-          <button type="submit" class="main-btn">Guardar</button>
+          <button [ngClass]="{ 'disabled-button': skillForms[i].invalid }" [disabled]="skillForms[i].invalid" type="submit" class="main-btn">Guardar</button>
+
           <button type="button" class="main-btn2" (click)="deleteSkill(habilidad.id)">Eliminar</button>
         </form>
         <hr>
       </div>
-    <button class="main-btn" id="volver" (click)="goBack()">Volver</button>
+      <button class="main-btn" id="volver" (click)="goBack()">Volver</button>

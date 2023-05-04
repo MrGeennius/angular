@@ -3,6 +3,7 @@ import { CrudService } from 'src/app/services/CrudService/crud-service.service';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Width } from 'ngx-owl-carousel-o/lib/services/carousel.service';
+import { Validators,FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-edithabilidades',
   templateUrl: './edithabilidades.component.html',
@@ -11,7 +12,15 @@ import { Width } from 'ngx-owl-carousel-o/lib/services/carousel.service';
 export class EdithabilidadesComponent implements OnInit {
   AboutHabilidades: any;
   newSkill: any = { habilidad: '' }
-  constructor(private crudService: CrudService, private router: Router) { }
+  isAddButtonDisabled: boolean = false;
+  remainingTime: number = 0;
+  newSkillForm: FormGroup;
+  skillForms: FormGroup[] = [];
+  constructor(private crudService: CrudService, private fb: FormBuilder, private router: Router) {
+    this.newSkillForm = this.fb.group({
+      habilidad: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(14)]],
+    });
+  }
 
   ngOnInit(): void {
     this.getAboutHabilidades();
@@ -22,8 +31,12 @@ export class EdithabilidadesComponent implements OnInit {
       .pipe(
         tap(AboutHabilidades => {
           this.AboutHabilidades = AboutHabilidades;
+          this.skillForms = AboutHabilidades.map(habilidad => {
+            return this.fb.group({
+              habilidad: [habilidad.habilidad, [Validators.required, Validators.minLength(3), Validators.maxLength(14)]]
+            });
+          });
           console.log('AboutHabilidades recibido:', AboutHabilidades);
-
         })
       )
       .subscribe();
@@ -35,11 +48,22 @@ export class EdithabilidadesComponent implements OnInit {
     });
   }
 
-  addSkill(skill: any) {
-    this.crudService.addSkill(skill).subscribe(newSkill => {
-      console.log('Habilidad agregada:', newSkill);
-      this.getAboutHabilidades(); // Actualiza la lista de habilidades
-    });
+  addSkill(skillData: any) {
+    if (this.remainingTime <= 0) {
+      this.isAddButtonDisabled = true;
+      this.crudService.addSkill(skillData).subscribe((createdSkill) => {
+        this.getAboutHabilidades();
+        this.newSkillForm.reset();
+        this.isAddButtonDisabled = false;
+        this.remainingTime = 5;
+        const interval = setInterval(() => {
+          this.remainingTime--;
+          if (this.remainingTime <= 0) {
+            clearInterval(interval);
+          }
+        }, 1000);
+      });
+    }
   }
 
   deleteSkill(id: number) {

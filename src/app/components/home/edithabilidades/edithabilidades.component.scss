@@ -206,3 +206,31 @@
     min-width: 700px;
     margin-bottom: 60px;
   }
+
+  .disabled-button {
+    cursor: not-allowed;
+    margin-left: 35px;
+    color: $EditBtn;
+    background-color: transparent;
+    border: 1px solid $EditBtn;
+    border-radius: 3px;
+    font-size: 13px;
+    font-family: $CodeFont;
+    line-height: 1;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    padding: 1.25rem 1.75rem;
+
+    &:hover, &:focus, &:active {
+        background-color: rgba(255, 100, 190, 0.07);
+        outline: none;
+    }
+}
+.text-danger{
+    margin-top: 12px;
+    margin-left: 35px;
+    font-size: 15px;
+}
