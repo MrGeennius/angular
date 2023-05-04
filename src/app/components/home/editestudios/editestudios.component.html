@@ -1,0 +1,40 @@
+<app-header>    </app-header>
+
+<div class="sep">
+    <p class="estudio">Estudios</p>
+    <form [formGroup]="newEstudiosForm" (ngSubmit)="addEstudios(newEstudiosForm.value)">
+        <div class="form-group">
+          <p class="text-h1">
+            <label for="new-skill">Agregar estudio</label></p>
+          <input formControlName="estudio" maxlength="200" type="text" class="form-control" id="new-skill" name="new-skill">
+          <div *ngIf="newEstudiosForm.controls['estudio'].invalid && (newEstudiosForm.controls['estudio'].dirty || newEstudiosForm.controls['estudio'].touched)" class="text-danger">
+            <div *ngIf="newEstudiosForm.controls['estudio'].errors.required">No puedes enviar formulario en blanco.</div>
+            <div *ngIf="newEstudiosForm.controls['estudio'].errors.minlength">La estudio debe tener al menos 3 caracteres.</div>
+            <div *ngIf="newEstudiosForm.controls['estudio'].errors.maxlength">La estudio no debe tener más de 200 caracteres.</div>
+          </div>
+        </div>
+        <button [ngClass]="{ 'disabled-button': remainingTime > 0 || newEstudiosForm.invalid }"
+            [disabled]="remainingTime > 0 || newEstudiosForm.invalid" type="submit" class="main-btn">Agregar</button>    
+        <div *ngIf="remainingTime > 0" class="text-danger">
+            Espera {{ remainingTime }} segundos para agregar otro estudio
+          </div>
+      </form>
+      
+      <!-- Listado -->
+      <div *ngFor="let estudio of AboutEstudios; let i = index">
+        <form [formGroup]="skillForms[i]" (ngSubmit)="updateEstudios(estudio)">
+          <div class="form-group">
+            <input formControlName="estudio" maxlength="200" type="text" class="form-control" id="skill" name="skill">
+            <div *ngIf="skillForms[i].controls['estudio'].invalid && (skillForms[i].controls['estudio'].dirty || skillForms[i].controls['estudio'].touched)" class="text-danger">
+              <div *ngIf="skillForms[i].controls['estudio'].errors.required">La estudio es obligatoria.</div>
+              <div *ngIf="skillForms[i].controls['estudio'].errors.minlength">La estudio debe tener al menos 3 caracteres.</div>
+              <div *ngIf="skillForms[i].controls['estudio'].errors.maxlength">La estudio no debe tener más de 200 caracteres.</div>
+            </div>
+          </div>
+          <button [ngClass]="{ 'disabled-button': skillForms[i].invalid }" [disabled]="skillForms[i].invalid" type="submit" class="main-btn">Guardar</button>
+
+          <button type="button" class="main-btn2" (click)="deleteEstudios(estudio.id)">Eliminar</button>
+        </form>
+        <hr>
+      </div>
+      <button class="main-btn" id="volver" (click)="goBack()">Volver</button>

@@ -6,7 +6,9 @@
                     <span class='n-section-title'>04.</span> Estudios
                 </h3>
             
-            <h1>1. He Estudiado en la escuela Entre Rios, y me he recibido terminando la secundaria de bachiller en administracion de empresas y economia.</h1>
+                <div id="estudio" class="col-6 col-md-6" *ngFor="let estudio of AboutEstudios">
+                    {{estudio?.estudio}}
+                  </div>
             </div>
         </div>
     </div>

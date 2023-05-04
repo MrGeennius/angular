@@ -7,7 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { BannerComponent } from './banner/banner.component';
 import { ContactComponent } from './contact/contact.component';
 import { JobsComponent } from './jobs/jobs.component';
-import { MoreProyectsComponent } from './more-proyects/more-proyects.component';
+import { AboutEstudiosComponent } from './aboutestudios/aboutestudios.component';
 import { ProyectsComponent } from './proyects/proyects.component';
 import { NgbModule, NgbNav, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -24,6 +24,7 @@ import { MatInputModule } from '@angular/material/input';
 import { EditAboutComponent } from './editabout/editabout.component';
 import { EditSaludoComponent } from './editsaludo/editsaludo.component';
 import { EdithabilidadesComponent } from './edithabilidades/edithabilidades.component';
+import { EditestudiosComponent } from './editestudios/editestudios.component';
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -37,7 +38,7 @@ export function HttpLoaderFactory(http: HttpClient){
     AboutComponent,
     JobsComponent,
     ProyectsComponent,
-    MoreProyectsComponent,
+    AboutEstudiosComponent,
     ContactComponent,
     ListComponent,
     CreateComponent,
@@ -48,6 +49,7 @@ export function HttpLoaderFactory(http: HttpClient){
     EditAboutComponent,
     EditSaludoComponent,
     EdithabilidadesComponent,
+    EditestudiosComponent,
   ],
   imports: [
     ReactiveFormsModule,

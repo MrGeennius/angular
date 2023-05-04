@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
+import { CrudService } from 'src/app/services/CrudService/crud-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-more-proyects2',
@@ -8,26 +9,50 @@ import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
   styleUrls: ['./more-proyects2.component.scss']
 })
 export class MoreProyects2Component implements OnInit {
+  personas: any;
+  aboutDesc: any;
+  AboutEstudios: any;
+  constructor(public analyticsService: AnalyticsService,private crudService: CrudService, private router: Router) {}
 
-  constructor(
-    private router: Router,
-    public analyticsService: AnalyticsService
-    ) { }
+  ngOnInit(): void {
+    this.getItems();
+    this.getAboutDesc();
+    this.getAboutEstudios();
+  }
+  getItems(): void {
+    this.crudService.getItems().subscribe((data) => {
+      this.personas = data;
+    });
+  }
 
-    ngOnInit() {
-        this.router.events.subscribe((evt) => {
-            if (!(evt instanceof NavigationEnd)) {
-                return;
-            }
-            window.scrollTo(0, 0)
-        });
-    }
-    redirect(route: string, event) {
-      const id = event.target.id;
-      if(id=='demoLink' || id=='ghLink'){
-        return
-      }
-      window.open(route, '_blank');
-    }
+  editItem(itemId: number): void {
+    this.router.navigate(['/edit', itemId]);
+  }
+
+  deleteItem(itemId: number): void {
+    this.crudService.deleteItem(itemId).subscribe(() => {
+      this.getItems(); 
+    });
+  }
+  getAboutDesc() {
+    this.crudService.getAboutDesc().subscribe(aboutDesc => {
+      this.aboutDesc = aboutDesc;
+    });
+  }
+  goToEditAbout() {
+    this.router.navigate(['/edit/about']);
+  }
+  goToHabilidad() {
+    this.router.navigate(['/edithabilidades']);
+  }
+  
+  getAboutEstudios() {
+    this.crudService.getAboutEstudios().subscribe(AboutEstudios => {
+      this.AboutEstudios = AboutEstudios;
+    });
+  }
+
+
 
 }
+

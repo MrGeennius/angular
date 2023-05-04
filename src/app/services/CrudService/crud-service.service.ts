@@ -81,4 +81,21 @@ deleteSkill(id: number): Observable<any> {
   return this.http.delete<any>(url);
 }
 
+getAboutEstudios(): Observable<any> {
+  return this.http.get<any>(`${this.apiUrl}/estudio/ver`);
+}
+updateEstudios(skill: any): Observable<any> {
+  const url = `${this.apiUrl}/estudio/modificar/${skill.id}`;
+  return this.http.put(url, skill);
+}
+addEstudios(skill: any): Observable<any> {
+  const url = `${this.apiUrl}/estudio/nueva`;
+  return this.http.post<any>(url, skill);
+}
+
+deleteEstudios(id: number): Observable<any> {
+  const url = `${this.apiUrl}/estudio/borrar/${id}`;
+  return this.http.delete<any>(url);
+}
+
 }
