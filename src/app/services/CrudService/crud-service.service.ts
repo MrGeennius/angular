@@ -64,4 +64,21 @@ getSaludoDesc(): Observable<any> {
   return this.http.get<any>(`${this.apiUrl}/saludo/ver`);
 }
 
+getAboutHabilidades(): Observable<any> {
+  return this.http.get<any>(`${this.apiUrl}/habilidad/ver`);
+}
+updateSkill(skill: any): Observable<any> {
+  const url = `${this.apiUrl}/habilidad/modificar/${skill.id}`;
+  return this.http.put(url, skill);
+}
+addSkill(skill: any): Observable<any> {
+  const url = `${this.apiUrl}/habilidad/nueva`;
+  return this.http.post<any>(url, skill);
+}
+
+deleteSkill(id: number): Observable<any> {
+  const url = `${this.apiUrl}/habilidad/borrar/${id}`;
+  return this.http.delete<any>(url);
+}
+
 }

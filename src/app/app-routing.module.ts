@@ -8,6 +8,7 @@ import { Home2Component } from './components/home2/home2.component';
 import { AboutComponent } from './components/home/about/about.component';
 import { EditAboutComponent } from './components/home/editabout/editabout.component';
 import { EditSaludoComponent } from './components/home/editsaludo/editsaludo.component';
+import { EdithabilidadesComponent } from './components/home/edithabilidades/edithabilidades.component';
 const routes: Routes = [
 
   {path: 'portfolio', component: Home2Component},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'edit/saludo', component: EditSaludoComponent},
   {path: 'edit/banner', component: EditBannerComponent},
   {path: 'edit/about', component: EditAboutComponent},
+  { path: 'edithabilidades', component: EdithabilidadesComponent },
   {path: '**', pathMatch: 'full', redirectTo: 'portfolio'}
 
 ];

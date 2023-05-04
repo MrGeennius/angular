@@ -2,6 +2,10 @@
 
 .about{
 
+    p{
+        display: inline;
+        font-size: 18px;
+    }
     .about-description{
         margin-top: 30px;
         max-width: 480px;
@@ -35,18 +39,21 @@
         display: grid;
         grid-template-columns: repeat(2,minmax(140px,200px));
         overflow: hidden;
+        color: $Green;
         padding: 0;
-        margin: 20px 0 0 0;
+        margin-top: 10px;
         list-style: none;
     }
 
     .skill-element{
         position: relative;
+        grid-template-columns: repeat(2,minmax(50px,50px));
         margin-bottom: 10px;
+        margin: 20px;
         padding-left: 20px;
         font-size: 13px;
         font-family: $CodeFont;
-        color: $Slate;
+        color: $Green;
         span{
           padding-bottom: 5px;
         }
@@ -56,7 +63,7 @@
             position: absolute;
             left: 0;
             color: $Green;
-            font-size: 14px;
+            font-size: 20px;
             line-height: 12px;
         }
     }
@@ -103,3 +110,52 @@
     }
 }
 
+.boton_editar{
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    -webkit-transition: all 0.12s cubic-bezier(0.645,0.045,0.355,1);
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    &:hover, &:focus, &:active {
+    width: 45px;
+    height: 45px;
+    }
+}
+
+.boton_editar2{
+    width: 35px;
+    height: 35px;
+    display: inline;
+    vertical-align:top;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+
+#habilidad{
+    
+        position: relative;
+        grid-template-columns: repeat(2,minmax(50px,50px));
+        margin-bottom: 10px;
+        margin: 5px;
+        padding-left: 20px;
+        font-size: 13px;
+        font-family: $CodeFont;
+        color: $Green;
+        span{
+          padding-bottom: 5px;
+        }
+
+        &:before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: $Green;
+            font-size: 20px;
+            line-height: 12px;
+        }
+    
+}

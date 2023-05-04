@@ -1,0 +1,24 @@
+<app-header>    </app-header>
+
+<div class="sep">
+    <p class="habilidad">Habilidades</p>
+    <form (ngSubmit)="addSkill(newSkill)">
+        <div class="form-group">
+          <p class="text-h1"><label for="newSkill">Agregar habilidad</label></p>
+          <input maxlength="20" type="text" class="form-control" id="newSkill" [(ngModel)]="newSkill.habilidad" name="newSkill">
+        </div>
+        <button type="submit" class="main-btn">Agregar</button>
+      </form>
+      
+      <!-- Listado de habilidades existentes -->
+      <div *ngFor="let habilidad of AboutHabilidades">
+        <form (ngSubmit)="updateSkill(habilidad)">
+          <div class="form-group">
+            <input maxlength="20" type="text" class="form-control" id="skill" [(ngModel)]="habilidad.habilidad" name="skill">
+          </div>
+          <button type="submit" class="main-btn">Guardar</button>
+          <button type="button" class="main-btn2" (click)="deleteSkill(habilidad.id)">Eliminar</button>
+        </form>
+        <hr>
+      </div>
+    <button class="main-btn" id="volver" (click)="goBack()">Volver</button>

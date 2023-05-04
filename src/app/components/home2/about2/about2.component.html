@@ -1,27 +1,26 @@
 <section class="section about" id='about'>
     <div class="container">
         <div class="section-box">
-            <div class="about-title" data-aos="fade-up">
+             <div class="about-title" data-aos="fade-up">
                 <h3 class="section-title">
                     <span class='n-section-title'>01.</span> {{"AboutMe.Title" | translate}}
                 </h3>
-            </div>
-            <div class="row">
+             </div>
+            <div data-aos="fade-up" data-aos-duration="1000" class="row">
                 <div class="col-12 col-md-6 mb-4 mb-md-0">
+                    <p>{{aboutDesc?.description}}</p>
                     <div class="about-description">
-                        {{aboutDesc?.description}}
-                        <ul class="skills-list" data-aos="fade-up">
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Photoshop </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">C++ </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">HTML</span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">JAVASCRIPT</span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Wordpress </span></li>
-                        </ul>
+                        <div class="skills-list">
+                            
+                            <div id="habilidad" class="col-6 col-md-6" *ngFor="let habilidad of AboutHabilidades"><span class="underline">
+                        {{habilidad?.habilidad}}</span>
+                      </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 mt-4 mt-md-0 text-center" data-aos="fade-up" data-aos-duration="1000">
+                </div>
+                    <div class="col-12 col-md-6 mt-4 mt-md-0 text-center" data-aos="fade-up" data-aos-duration="1000">
                     <div class="about-img-container">
-                        <img class="rounded" width="300" height="300" src="assets/images/me.png" alt="Portfolio - Juan Ignacio Duarte">
+                        <img (click)='analyticsService.sendAnalyticEvent("click_image", "about", "image")' class="rounded" width="300" height="300" src="assets/images/me.png" alt="Portfolio - Juan Ignacio Duarte">
                     </div>
                 </div>
             </div>

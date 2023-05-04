@@ -17,12 +17,13 @@ import { FooterComponent } from './footer/footer.component';
 import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditBannerComponent } from './editbanner/editbanner.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { EditAboutComponent } from './editabout/editabout.component';
 import { EditSaludoComponent } from './editsaludo/editsaludo.component';
+import { EdithabilidadesComponent } from './edithabilidades/edithabilidades.component';
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -46,9 +47,11 @@ export function HttpLoaderFactory(http: HttpClient){
     EditBannerComponent,
     EditAboutComponent,
     EditSaludoComponent,
+    EdithabilidadesComponent,
   ],
   imports: [
     ReactiveFormsModule,
+    FormsModule,
     CommonModule,
     MatFormFieldModule,
     MatInputModule,

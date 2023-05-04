@@ -11,11 +11,13 @@ import { Router } from '@angular/router';
 export class AboutComponent implements OnInit {
   personas: any;
   aboutDesc: any;
+  AboutHabilidades: any;
   constructor(public analyticsService: AnalyticsService,private crudService: CrudService, private router: Router) {}
 
   ngOnInit(): void {
     this.getItems();
     this.getAboutDesc();
+    this.getAboutHabilidades();
   }
   getItems(): void {
     this.crudService.getItems().subscribe((data) => {
@@ -40,4 +42,17 @@ export class AboutComponent implements OnInit {
   goToEditAbout() {
     this.router.navigate(['/edit/about']);
   }
+  goToHabilidad() {
+    this.router.navigate(['/edithabilidades']);
+  }
+  
+  getAboutHabilidades() {
+    this.crudService.getAboutHabilidades().subscribe(AboutHabilidades => {
+      this.AboutHabilidades = AboutHabilidades;
+    });
+  }
+
+
+
 }
+
