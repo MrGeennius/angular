@@ -1,0 +1,64 @@
+<app-header></app-header>
+
+<div class="sep">
+  <p class="experiencia">Experiencia</p>
+  <button class="main-btn" (click)="toggleAddForm()">
+    {{ showAddForm ? 'Ocultar formulario' : 'Mostrar formulario para agregar nueva experiencia' }}
+  </button>
+  <form *ngIf="showAddForm" [formGroup]="newExperienciasForm" (ngSubmit)="addExperiencias(newExperienciasForm.value)">
+    <!-- agregar -->
+    <div class="form-group">
+      <label for="tab">Titulo de la Pestaña</label>
+      <input formControlName="tab" type="text" class="form-control" id="tab" name="tab">
+    </div>
+    <div class="form-group">
+      <label for="titulo">Título</label>
+      <input formControlName="titulo" type="text" class="form-control" id="titulo" name="titulo">
+    </div>
+    <div class="form-group">
+        <label for="fecha">Fecha</label>
+        <input maxlength="12" formControlName="fecha" type="text" class="form-control" id="fecha" name="fecha">
+      </div>
+    <div class="form-group">
+      <label for="description">Descripción</label>
+      <textarea formControlName="description" rows="3" class="form-control" id="description" name="description"></textarea>
+    </div>
+    <button
+      [ngClass]="{ 'disabled-button': remainingTime > 0 || newExperienciasForm.invalid }"
+      [disabled]="remainingTime > 0 || newExperienciasForm.invalid"
+      type="submit"
+      class="main-btn">
+      Agregar
+    </button>
+    <div *ngIf="remainingTime > 0" class="text-danger">
+      Espera {{ remainingTime }} segundos para agregar otra experiencia.
+    </div>
+  </form>
+
+  <!-- listado -->
+<div *ngFor="let experiencia of Experiencias; let i = index">
+    <form [formGroup]="skillForms[i]" (ngSubmit)="updateExperiencias(experiencia)">
+      <div class="form-group">
+        <label for="tab">Titulo de la Pestaña</label>
+        <input formControlName="tab" type="text" class="form-control" id="tab" name="tab" [value]="experiencia.tab">
+      </div>
+      <div class="form-group">
+        <label for="titulo">Título</label>
+        <input formControlName="titulo" type="text" class="form-control" id="titulo" name="titulo" [value]="experiencia.titulo">
+      </div>
+      <div class="form-group">
+        <label for="fecha">Fecha</label>
+        <input maxlength="12" formControlName="fecha" type="text" class="form-control" id="fecha" name="fecha">
+      </div>
+      <div class="form-group">
+        <label for="description">Descripción</label>
+        <textarea formControlName="description" rows="3" class="form-control" id="description" name="description" [value]="experiencia.description"></textarea>
+      </div>
+      <button [ngClass]="{ 'disabled-button': skillForms[i].invalid }" [disabled]="skillForms[i].invalid" type="submit" class="main-btn">
+        Guardar
+      </button>
+      <button type="button" class="main-btn2" (click)="deleteExperiencias(experiencia.id)">Eliminar</button>
+    </form>
+    <hr />
+  </div>
+  <button class="main-btn" id="volver" (click)="goBack()">Volver</button>

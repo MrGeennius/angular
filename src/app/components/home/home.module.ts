@@ -25,6 +25,7 @@ import { EditAboutComponent } from './editabout/editabout.component';
 import { EditSaludoComponent } from './editsaludo/editsaludo.component';
 import { EdithabilidadesComponent } from './edithabilidades/edithabilidades.component';
 import { EditestudiosComponent } from './editestudios/editestudios.component';
+import { EditexperienciasComponent } from './editexperiencias/editexperiencias.component';
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -50,6 +51,7 @@ export function HttpLoaderFactory(http: HttpClient){
     EditSaludoComponent,
     EdithabilidadesComponent,
     EditestudiosComponent,
+    EditexperienciasComponent,
   ],
   imports: [
     ReactiveFormsModule,

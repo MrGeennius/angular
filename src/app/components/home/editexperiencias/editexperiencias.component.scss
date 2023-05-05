@@ -1,0 +1,236 @@
+.sep{
+    margin-top: 100px;
+}
+
+@import "./../../../../variables.scss";
+
+.banner{
+    min-height: 100vh;
+    
+    .container{
+        display: table;
+        height: 100vh;
+
+        .section-box-banner{
+            display: table-cell;
+            vertical-align: middle;
+
+            .content{
+                margin-top: 98px;
+            }
+
+            text-h1{
+    
+                color: #64ffda;
+                margin: 0 0 20px 3px;
+                font-size: 15px;
+                font-weight: normal;
+                font-family: $CodeFont;
+            }
+            p {
+                margin-left: 30px;
+                margin: 10px;
+                display: inline;
+            }
+            .text-h2{
+                font-weight: 600;
+                color: $LightestSlate;
+                font-size: 40px;
+                line-height: 1.1;
+                margin: 0;
+                font-family: $MainFont;
+            }
+            .text-h3{
+                font-weight: 600;
+                font-size: 40px;
+                line-height: 1.1;
+                margin: 0;
+                font-family: $MainFont;
+                color: $Slate;
+            }
+            h2{
+                text-align: center;
+                color: $Green;
+            }
+            h3{  
+                color: $Slate;
+            }
+
+            .banner-description{
+                margin-bottom: 70px;
+            }
+
+            p{
+                max-width: 500px;
+            }
+
+            .div-btn-banner{
+                height: 43px;
+            }
+            label{
+                width:130px;
+                display: inline-block;
+            }
+        }
+
+       
+    }    
+}
+
+.large-input {
+    width: 100%;
+    display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  margin-bottom: 20px; 
+  }
+/* Estilo personalizado para el matInput */
+.custom-textarea {
+    width: 100%; 
+    max-width: 700px;
+    min-width: 700px;
+    min-height: 100px;
+    max-height: 400px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border: 1px solid $Green;
+    display: flex;
+  flex-wrap: wrap; 
+  font-size: 18px;
+  background-color: transparent;
+  padding: 10px;
+  color: #FFFFFF;
+  -webkit-transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    transition: all 0.5s cubic-bezier(0.645,0.045,0.355,1);
+  &:hover, &:focus, &:active {
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    outline: none;}
+  }
+.cine {
+    font-size:25px;
+    color:rgb(255, 255, 255)
+}
+  
+
+  
+  /* Estilo personalizado para el botón */
+  
+    
+  
+  .custom-button {
+    color: $Green;
+    margin-top: 16px; /* Cambia el margen superior según tus necesidades */
+    margin-left: 100px; /* Cambia el margen izquierdo según tus necesidades */
+    background-color: transparent;
+    border: 1px solid $Green;
+    border-radius: 3px;
+    font-size: 13px;
+    font-family: $CodeFont;
+    line-height: 1;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    padding: 1.25rem 1.75rem;
+
+    &:hover, &:focus, &:active {
+        background-color: rgba(100,255,218,0.07);
+        outline: none;
+    }
+}
+.mat-hint{
+    font-size: 16px;
+    color:azure;
+    
+}
+.mat-hint-div{
+    margin-top: 25px;
+    margin-bottom:20px ;
+}
+.form-group{
+    margin-left: 45px;
+    width: 100%; 
+    max-width: 700px;
+    min-width: 700px;
+    min-height: 60px;
+    max-height: 400px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border: 1px solid $Green;
+    display: flex;
+  flex-wrap: wrap; 
+  font-size: 18px;
+  background-color: transparent;
+  padding: 10px;
+  color: #FFFFFF;
+  -webkit-transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    transition: all 0.5s cubic-bezier(0.645,0.045,0.355,1);
+  }
+.experiencia{
+    margin-top: 50px;
+    font-size: 25px;
+    margin-left: 340px;
+    color: $Green;
+  }
+.main-btn{
+    margin-left: 45px;
+}
+
+.main-btn2{
+    margin-left: 5px;
+    color: $EditBtn;
+    background-color: transparent;
+    border: 1px solid $EditBtn;
+    border-radius: 3px;
+    font-size: 13px;
+    font-family: $CodeFont;
+    line-height: 1;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    padding: 1.25rem 1.75rem;
+
+    &:hover, &:focus, &:active {
+        background-color: rgba(255, 100, 190, 0.07);
+        outline: none;
+    }
+}
+
+#volver{
+    min-width: 700px;
+    margin-bottom: 60px;
+  }
+
+  .disabled-button {
+    cursor: not-allowed;
+    margin-left: 45px;
+    color: $EditBtn;
+    background-color: transparent;
+    border: 1px solid $EditBtn;
+    border-radius: 3px;
+    font-size: 13px;
+    font-family: $CodeFont;
+    line-height: 1;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    padding: 1.25rem 1.75rem;
+
+    &:hover, &:focus, &:active {
+        background-color: rgba(255, 100, 190, 0.07);
+        outline: none;
+    }
+}
+.text-danger{
+    margin-top: 12px;
+    margin-left: 45px;
+    font-size: 15px;
+}

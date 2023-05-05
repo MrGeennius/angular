@@ -10,6 +10,7 @@ import { EditAboutComponent } from './components/home/editabout/editabout.compon
 import { EditSaludoComponent } from './components/home/editsaludo/editsaludo.component';
 import { EdithabilidadesComponent } from './components/home/edithabilidades/edithabilidades.component';
 import { EditestudiosComponent } from './components/home/editestudios/editestudios.component';
+import { EditexperienciasComponent } from './components/home/editexperiencias/editexperiencias.component';
 const routes: Routes = [
 
   {path: 'portfolio', component: Home2Component},
@@ -21,6 +22,8 @@ const routes: Routes = [
   {path: 'edit/about', component: EditAboutComponent},
   {path: 'edit/estudios', component: EditestudiosComponent},
   {path: 'edithabilidades', component: EdithabilidadesComponent },
+  {path: 'edit/experiencias', component: EditexperienciasComponent },
+
   {path: '**', pathMatch: 'full', redirectTo: 'portfolio'}
 
 ];

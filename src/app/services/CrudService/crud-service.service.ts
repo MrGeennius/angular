@@ -98,4 +98,21 @@ deleteEstudios(id: number): Observable<any> {
   return this.http.delete<any>(url);
 }
 
+getExperiencias(): Observable<any> {
+  return this.http.get<any>(`${this.apiUrl}/experiencia/ver`);
+}
+updateExperiencias(skill: any): Observable<any> {
+  const url = `${this.apiUrl}/experiencia/modificar/${skill.id}`;
+  return this.http.put(url, skill);
+}
+addExperiencias(skill: any): Observable<any> {
+  const url = `${this.apiUrl}/experiencia/nueva`;
+  return this.http.post<any>(url, skill);
+}
+
+deleteExperiencias(id: number): Observable<any> {
+  const url = `${this.apiUrl}/experiencia/borrar/${id}`;
+  return this.http.delete<any>(url);
+}
+
 }

@@ -7,15 +7,21 @@
               </h3>
           </div>
           <div class="jobs-tabs" data-aos="fade-up" data-aos-duration="1000">
+
             <ul ngbNav #nav="ngbNav" [(activeId)]="active" orientation="vertical" class="nav-tabs jobs-tabs">
-                  <li *ngFor='let job of "Experience.Jobs" | translate; let i = index' [title]="job.Tab" [ngbNavItem]="i">
-                    <a ngbNavLink>{{job.Tab}}</a>
+             <!-- primera lista -->
+             <li *ngFor="let experiencia of Experiencias; let i = index" [title]="experiencia.Tab" [ngbNavItem]="i">
+              <a ngbNavLink [attr.aria-current]="i === 0 ? 'page' : null">{{experiencia?.tab}}</a>
+
                       <ng-template ngbNavContent>
-                        <h4 class='title-tab-content'>{{job.Title}} | <span class="company-tab-content">{{job.Tab}}</span></h4>
-                        <h5 class="job-time">{{job.Date}}</h5>
-                        <!-- {{job.Description | json}} -->
-                        <p *ngFor='let jobDescriptionParagraph of job.Description; let i = index' class="job-description"
-                        [innerHTML]="jobDescriptionParagraph | translate"></p>
+                        <!-- titulo y tab -->
+                        <h4 class='title-tab-content'>{{experiencia?.titulo}} | <span class="company-tab-content">{{experiencia?.tab}}</span></h4>
+                        <!-- fecha -->
+                        <h5 class="job-time">{{experiencia?.fecha}}</h5>
+
+                        <!-- {{job.Description | json}} segunda lista -->
+                        <p>{{experiencia?.description}}</p>
+
                         <span></span>
                       </ng-template>
                   </li>
