@@ -16,6 +16,7 @@ export class EditexperienciasComponent implements OnInit {
   remainingTime: number = 0;
   newExperienciasForm: FormGroup;
   skillForms: FormGroup[] = [];
+  experienceFormSubmitted: boolean = false;
   showAddForm = false;
   constructor(private crudService: CrudService, private fb: FormBuilder, private router: Router) {
     this.newExperienciasForm = this.fb.group({
@@ -40,6 +41,7 @@ export class EditexperienciasComponent implements OnInit {
           this.Experiencias = Experiencias;
           this.skillForms = Experiencias.map(experiencia => {
             return this.fb.group({
+              id: [experiencia.id],
               tab: [experiencia.tab, Validators.required],
               titulo: [experiencia.titulo, Validators.required],
               fecha: [experiencia.fecha, Validators.required],
@@ -52,12 +54,15 @@ export class EditexperienciasComponent implements OnInit {
       .subscribe();
   }
 
-  updateExperiencias(skill: any) {
-    this.crudService.updateExperiencias(skill).subscribe(updatedExperiencias => {
-      console.log('Experiencia actualizado:', updatedExperiencias);
+  updateExperiencias(experience: any) {
+    this.crudService.updateExperiencias(experience).subscribe(updatedExperience => {
+      console.log('Experiencia actualizada:', updatedExperience);
+      this.experienceFormSubmitted = true;
+      setTimeout(() => {
+        this.experienceFormSubmitted = false;
+      }, 5000);
     });
   }
-
   addExperiencias(skillData: any) {
     if (this.remainingTime <= 0) {
       this.isAddButtonDisabled = true;

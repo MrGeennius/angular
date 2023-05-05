@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-headersecond></app-headersecond>
 
 <div class="sep">
   <p class="experiencia">Experiencia</p>
@@ -37,8 +37,9 @@
 
   <!-- listado -->
 <div *ngFor="let experiencia of Experiencias; let i = index">
-    <form [formGroup]="skillForms[i]" (ngSubmit)="updateExperiencias(experiencia)">
+    <form [formGroup]="skillForms[i]" (ngSubmit)="updateExperiencias(skillForms[i].value)">
       <div class="form-group">
+        <input type="hidden" formControlName="id" [value]="experiencia.id">
         <label for="tab">Titulo de la Pestaña</label>
         <input formControlName="tab" type="text" class="form-control" id="tab" name="tab" [value]="experiencia.tab">
       </div>
@@ -52,12 +53,13 @@
       </div>
       <div class="form-group">
         <label for="description">Descripción</label>
-        <textarea formControlName="description" rows="3" class="form-control" id="description" name="description" [value]="experiencia.description"></textarea>
+        <textarea maxlength="700" formControlName="description" rows="3" class="form-control" id="description" name="description" [value]="experiencia.description"></textarea>
       </div>
-      <button [ngClass]="{ 'disabled-button': skillForms[i].invalid }" [disabled]="skillForms[i].invalid" type="submit" class="main-btn">
-        Guardar
-      </button>
+      <button [ngClass]="{ 'disabled-button': skillForms[i].invalid || experienceFormSubmitted }" [disabled]="skillForms[i].invalid || experienceFormSubmitted" type="submit" class="main-btn">Guardar</button>
       <button type="button" class="main-btn2" (click)="deleteExperiencias(experiencia.id)">Eliminar</button>
+      <div *ngIf="experienceFormSubmitted" class="alert alert-success mt-2">
+        Experiencia actualizada con éxito.
+      </div>
     </form>
     <hr />
   </div>

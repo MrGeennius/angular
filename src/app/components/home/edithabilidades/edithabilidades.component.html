@@ -1,4 +1,4 @@
-<app-header>    </app-header>
+<app-headersecond></app-headersecond>
 
 <div class="sep">
     <p class="habilidad">Habilidades</p>
@@ -22,7 +22,8 @@
       
       <!-- Listado -->
       <div *ngFor="let habilidad of AboutHabilidades; let i = index">
-        <form [formGroup]="skillForms[i]" (ngSubmit)="updateSkill(habilidad)">
+        <form [formGroup]="skillForms[i]" (ngSubmit)="updateSkill(skillForms[i].value)">
+          <input type="hidden" formControlName="id" [value]="habilidad.id">
           <div class="form-group">
             <input formControlName="habilidad" maxlength="14" type="text" class="form-control" id="skill" name="skill">
             <div *ngIf="skillForms[i].controls['habilidad'].invalid && (skillForms[i].controls['habilidad'].dirty || skillForms[i].controls['habilidad'].touched)" class="text-danger">
@@ -31,9 +32,11 @@
               <div *ngIf="skillForms[i].controls['habilidad'].errors.maxlength">La habilidad no debe tener más de 14 caracteres.</div>
             </div>
           </div>
-          <button [ngClass]="{ 'disabled-button': skillForms[i].invalid }" [disabled]="skillForms[i].invalid" type="submit" class="main-btn">Guardar</button>
-
+          <button [ngClass]="{ 'disabled-button': skillForms[i].invalid || formSubmitted }" [disabled]="skillForms[i].invalid || formSubmitted" type="submit" class="main-btn">Guardar</button>
           <button type="button" class="main-btn2" (click)="deleteSkill(habilidad.id)">Eliminar</button>
+          <div *ngIf="formSubmitted" class="alert alert-success mt-2">
+            Habilidad actualizada con éxito.
+          </div>
         </form>
         <hr>
       </div>

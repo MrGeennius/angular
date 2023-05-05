@@ -15,6 +15,7 @@ export class EdithabilidadesComponent implements OnInit {
   isAddButtonDisabled: boolean = false;
   remainingTime: number = 0;
   newSkillForm: FormGroup;
+  formSubmitted: boolean = false;
   skillForms: FormGroup[] = [];
   constructor(private crudService: CrudService, private fb: FormBuilder, private router: Router) {
     this.newSkillForm = this.fb.group({
@@ -33,6 +34,7 @@ export class EdithabilidadesComponent implements OnInit {
           this.AboutHabilidades = AboutHabilidades;
           this.skillForms = AboutHabilidades.map(habilidad => {
             return this.fb.group({
+              id: [habilidad.id],
               habilidad: [habilidad.habilidad, [Validators.required, Validators.minLength(3), Validators.maxLength(14)]]
             });
           });
@@ -45,6 +47,10 @@ export class EdithabilidadesComponent implements OnInit {
   updateSkill(skill: any) {
     this.crudService.updateSkill(skill).subscribe(updatedSkill => {
       console.log('Habilidad actualizada:', updatedSkill);
+      this.formSubmitted = true;
+      setTimeout(() => {
+        this.formSubmitted = false;
+      }, 5000);
     });
   }
 

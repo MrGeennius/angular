@@ -1,0 +1,33 @@
+<nav [@animateMenu] class="navbar main-navbar on-top" [class.nav-shadow]='this.pageYPosition>0'>
+    <div class="container">
+        <a class="navbar-brand text-light">
+            <img src='assets/images/logo.png' width='25' />
+        </a>
+        <ul ngbNav #nav="ngbNav" class="menu-ul">
+            <li ngbNavItem>
+                <a (click)="goToPortfolio()" class="main-btn cv-btn" ngbNavLink>
+                  Volver
+                </a>
+            </li>
+            <li ngbNavItem>
+                <a (click)="goToLogin()" class="main-btn cv-btn" ngbNavLink>
+                  LogOut
+                </a>
+            </li>
+        </ul>
+        <div class="menu-wrapper">
+            <div [class.animate]='responsiveMenuVisible' (click)='responsiveMenuVisible = !responsiveMenuVisible' class="hamburger-menu"></div>
+        </div>
+        <div class="menu-responsive" [ngStyle]="{'pointer-events': !responsiveMenuVisible ? 'none' : '' }">
+            <aside [class.aside-show]='responsiveMenuVisible' [class.nav-shadow]='this.pageYPosition>0' class="on-top">
+                <nav>
+                    <ol>
+                      <li>
+
+                      </li>
+                    </ol>
+                </nav>
+            </aside>
+        </div>
+    </div>
+</nav>
