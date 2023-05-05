@@ -2,6 +2,10 @@
 
 .about{
 
+    h3{
+        font-size: 20px;
+    }
+
     p{
         display: inline;
         font-size: 18px;
@@ -123,6 +127,24 @@
     height: 45px;
     }
 }
+.boton_editarfoto{
+    margin-top: -280px;
+    margin-left: 280px;
+    text-align: right;
+    vertical-align: top;
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    -webkit-transition: all 0.12s cubic-bezier(0.645,0.045,0.355,1);
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    &:hover, &:focus, &:active {
+    width: 45px;
+    height: 45px;
+    }
+}
+
 
 .boton_editar2{
     width: 35px;

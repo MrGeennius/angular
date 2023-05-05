@@ -3,7 +3,7 @@
         <div class="section-box">
              <div class="about-title" data-aos="fade-up">
                 <h3 class="section-title">
-                    <span class='n-section-title'>01.</span> {{"AboutMe.Title" | translate}}
+                    <span class='n-section-title'>01.</span> Acerca de mi
                 </h3>
              </div>
             <div data-aos="fade-up" data-aos-duration="1000" class="row">
@@ -26,8 +26,11 @@
                 </div>
                     <div class="col-12 col-md-6 mt-4 mt-md-0 text-center" data-aos="fade-up" data-aos-duration="1000">
                     <div class="about-img-container">
-                        <img (click)='analyticsService.sendAnalyticEvent("click_image", "about", "image")' class="rounded" width="300" height="300" src="assets/images/me.png" alt="Portfolio - Juan Ignacio Duarte">
+                        <img class="rounded" width="300" height="300" src="{{aboutDesc?.img_url}}" alt="Portfolio - Juan Ignacio Duarte">
                     </div>
+                    <button class="boton_editarfoto" (click)="goToEditAbout()">
+                        <img class="boton_editar" src="/assets/images/boton_editar_3.png"/>
+                        </button>
                 </div>
             </div>
         </div>

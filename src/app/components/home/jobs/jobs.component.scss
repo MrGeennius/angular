@@ -1,6 +1,8 @@
 @import "./../../../../variables.scss";
 
-
+h3{
+    font-size: 20px;
+}
 ::ng-deep .jobs .jobs-tabs {
     display: flex;
 

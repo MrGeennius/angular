@@ -4,17 +4,19 @@
             <div class="mb-4" data-aos="fade-up" data-aos-duration="1000">
                 <h3 class="contact-pre-title big-subtitle">05. {{"Contact.Pretitle" | translate}}</h3>
                 <h4 class="e-font contact-title big-title">
-                    {{"Contact.Title" | translate}}
+                    ¡Saludame!
                 </h4>
             </div>
+            <div data-aos="fade-up" data-aos-duration="1000">
             <p>{{saludoDesc?.description}}</p>
                 <p><button class="boton_editar" (click)="goToEditSaludo()">
                     <img class="boton_editar" src="/assets/images/boton_editar_3.png"/>
                 </button></p>
             <div class="mt-5">
                 <a (click)='analyticsService.sendAnalyticEvent("click_send_mail", "contact", "email")' href="mailto:mr.geennius@gmail.com" target="_blank" class="main-btn" data-aos="fade-up" data-aos-duration="1000">
-                    {{"Contact.Btn" | translate}}
+                    Contáctame
                 </a>
+            </div>
             </div>
         </div>
     </div>

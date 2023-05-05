@@ -88,6 +88,29 @@
     background-color: rgb(255, 255, 255);
     outline: none;}
   }
+  .custom-textarea2 {
+    width: 100%; 
+    max-width: 700px;
+    min-width: 700px;
+    min-height: 40px;
+    max-height: 100px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border: 1px solid $Green;
+    display: flex;
+  flex-wrap: wrap; 
+  font-size: 18px;
+  background-color: transparent;
+  padding: 10px;
+  color: #FFFFFF;
+  -webkit-transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+    transition: all 0.5s cubic-bezier(0.645,0.045,0.355,1);
+  &:hover, &:focus, &:active {
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    outline: none;}
+  }
 .cine {
     font-size:25px;
     color:rgb(255, 255, 255)

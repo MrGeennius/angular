@@ -1,4 +1,7 @@
 @import "./../../../../variables.scss";
+h3{
+    font-size: 20px;
+}
 .proyects {
     .proyect-container {
         height: 360px;
@@ -28,6 +31,7 @@
             }
             .proyect-name {
                 font-size: 28px;
+                line-height: 33px;
                 margin: 0 0 20px;
                 color: $LightestSlate;
             }
