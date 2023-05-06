@@ -22,7 +22,8 @@
       
       <!-- Listado -->
       <div *ngFor="let estudio of AboutEstudios; let i = index">
-        <form [formGroup]="skillForms[i]" (ngSubmit)="updateEstudios(estudio)">
+        <form [formGroup]="skillForms[i]" (ngSubmit)="updateEstudios(skillForms[i].value)">
+          <input type="hidden" formControlName="id" [value]="estudio.id">
           <div class="form-group">
             <input formControlName="estudio" maxlength="200" type="text" class="form-control" id="skill" name="skill">
             <div *ngIf="skillForms[i].controls['estudio'].invalid && (skillForms[i].controls['estudio'].dirty || skillForms[i].controls['estudio'].touched)" class="text-danger">
@@ -34,6 +35,9 @@
           <button [ngClass]="{ 'disabled-button': skillForms[i].invalid }" [disabled]="skillForms[i].invalid" type="submit" class="main-btn">Guardar</button>
 
           <button type="button" class="main-btn2" (click)="deleteEstudios(estudio.id)">Eliminar</button>
+          <div *ngIf="studyFormSubmitted" class="alert alert-success mt-2">
+            Estudio actualizado con éxito.
+          </div>
         </form>
         <hr>
       </div>

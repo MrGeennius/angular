@@ -16,6 +16,7 @@ export class EditestudiosComponent implements OnInit {
   remainingTime: number = 0;
   newEstudiosForm: FormGroup;
   skillForms: FormGroup[] = [];
+  studyFormSubmitted: boolean = false;
   constructor(private crudService: CrudService, private fb: FormBuilder, private router: Router) {
     this.newEstudiosForm = this.fb.group({
       estudio: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(200)]],
@@ -33,6 +34,7 @@ export class EditestudiosComponent implements OnInit {
           this.AboutEstudios = AboutEstudios;
           this.skillForms = AboutEstudios.map(estudio => {
             return this.fb.group({
+              id: [estudio.id],
               estudio: [estudio.estudio, [Validators.required, Validators.minLength(3), Validators.maxLength(200)]]
             });
           });
@@ -45,6 +47,10 @@ export class EditestudiosComponent implements OnInit {
   updateEstudios(skill: any) {
     this.crudService.updateEstudios(skill).subscribe(updatedEstudios => {
       console.log('Estudio actualizado:', updatedEstudios);
+      this.studyFormSubmitted = true;
+      setTimeout(() => {
+        this.studyFormSubmitted = false;
+      }, 5000);
     });
   }
 

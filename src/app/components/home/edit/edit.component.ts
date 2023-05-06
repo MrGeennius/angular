@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { CrudService } from 'src/app/services/CrudService/crud-service.service';
 import { Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -27,10 +28,9 @@ export class EditComponent implements OnInit {
 
   initForm() {
     this.itemForm = this.formBuilder.group({
-      nombre:['', [Validators.required, Validators.minLength(3)]],
-      apellido: '',
-      descripcion:''
-      
+      nombre: ['', [Validators.required, Validators.minLength(3)]],
+      apellido: ['', [Validators.required, Validators.minLength(4)]],
+      descripcion: ['', [Validators.required, Validators.minLength(5)]]
     });
   }
 

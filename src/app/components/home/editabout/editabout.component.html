@@ -23,8 +23,11 @@
                 </mat-hint></div>
               </mat-form-field>
             </div>
+            <div *ngIf="aboutForm.controls.description.invalid && aboutForm.controls.description.touched" class="text-danger">
+              <div *ngIf="aboutForm.controls.description.errors.required">La descripción es obligatoria.</div>
+            </div>
             <div class="mb-0">
-              <button class="main-btn" type="submit">Guardar cambios</button>
+              <button class="main-btn" type="submit" [disabled]="aboutForm.invalid" [ngClass]="{'disabled-button':aboutForm.invalid}">Guardar cambios</button>
             </div>
           </form>
           

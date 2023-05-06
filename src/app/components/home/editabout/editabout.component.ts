@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { CrudService } from 'src/app/services/CrudService/crud-service.service';
 import { Router } from '@angular/router';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-editabout',
@@ -15,7 +16,7 @@ export class EditAboutComponent implements OnInit {
 
   constructor(private crudService: CrudService, private router: Router) {
     this.aboutForm = new FormGroup({
-      description: new FormControl(''),
+      description: new FormControl('', Validators.required),
       img_url: new FormControl(''),
     });
   }
