@@ -15,7 +15,13 @@
 /e2e
 /.e2e
 # dependencies
-/.angular/cache/13.2.4
+/.angular
+/.angular/cache/13.3.11
+/.angular/*
+/.firebase
+/.firebaserc
+/.github
+/firebase.json
 /node_modules
 # profiling files
 chrome-profiler-events*.json
