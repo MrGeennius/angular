@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CrudService {
-  private apiUrl = 'https://jay-service.onrender.com';
+  private apiUrl = '';
   constructor(private http: HttpClient) { }
   
   getItems(): Observable<any> {

@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  url="https://jay-service.onrender.com/login";
+  url="/login";
   currentUserSubject: BehaviorSubject<any>;
   constructor(private http:HttpClient){ 
   console.log("El servicio esta corriendo.");
