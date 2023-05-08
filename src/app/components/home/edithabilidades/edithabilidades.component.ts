@@ -35,7 +35,7 @@ export class EdithabilidadesComponent implements OnInit {
           this.skillForms = AboutHabilidades.map(habilidad => {
             return this.fb.group({
               id: [habilidad.id],
-              habilidad: [habilidad.habilidad, [Validators.required, Validators.minLength(3), Validators.maxLength(14)]]
+              habilidad: [habilidad.habilidad, [Validators.required, Validators.minLength(3), Validators.maxLength(20)]]
             });
           });
           console.log('AboutHabilidades recibido:', AboutHabilidades);

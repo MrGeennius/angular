@@ -18,10 +18,15 @@
 /.angular
 /.angular/cache/13.3.11
 /.angular/*
-/.firebase
-/.firebaserc
-/.github
-/firebase.json
+# FIREBASE
+ /.firebase
+ /.firebaserc
+ /.github
+ /firebase.json
+.firebase/
+.firebaserc
+firebase.json
+.github/
 /node_modules
 # profiling files
 chrome-profiler-events*.json

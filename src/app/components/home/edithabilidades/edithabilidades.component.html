@@ -6,11 +6,11 @@
         <div class="form-group">
           <p class="text-h1">
             <label for="new-skill">Agregar habilidad</label></p>
-          <input formControlName="habilidad" maxlength="14" type="text" class="form-control" id="new-skill" name="new-skill">
+          <input formControlName="habilidad" maxlength="20" type="text" class="form-control" id="new-skill" name="new-skill">
           <div *ngIf="newSkillForm.controls['habilidad'].invalid && (newSkillForm.controls['habilidad'].dirty || newSkillForm.controls['habilidad'].touched)" class="text-danger">
             <div *ngIf="newSkillForm.controls['habilidad'].errors.required">No puedes enviar formulario en blanco.</div>
             <div *ngIf="newSkillForm.controls['habilidad'].errors.minlength">La habilidad debe tener al menos 3 caracteres.</div>
-            <div *ngIf="newSkillForm.controls['habilidad'].errors.maxlength">La habilidad no debe tener más de 14 caracteres.</div>
+            <div *ngIf="newSkillForm.controls['habilidad'].errors.maxlength">La habilidad no debe tener más de 20 caracteres.</div>
           </div>
         </div>
         <button [ngClass]="{ 'disabled-button': remainingTime > 0 || newSkillForm.invalid }"

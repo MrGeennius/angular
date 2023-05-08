@@ -1,8 +1,0 @@
-{
-    "/echo": {
-        "target": "https://jay-service.onrender.com",
-        "secure":"true",
-        "changeOrigin":"true",
-        "logLevel":"debug"
-    }
-}
